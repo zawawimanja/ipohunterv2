@@ -628,11 +628,34 @@ function getIpoGrade(ipo) {
     const isRed = perf.includes('-');
 
     if (ipo.stage < 5 && os === 0) {
-        // If it's a top-tier setup, don't just call it Pending, call it "Pending (High Potential)"
-        if (isHero || isTrendingSector) {
-             return { grade: 'Pending', reason: '<b>High Potential Setup:</b><br>🏛️ Strong IB/Sector<br>⏳ Waiting for OS data to confirm Grade A/B.' };
+        // Calculate Pre-OS Grade
+        let score = 0;
+        if (isHero) score += 40;
+        else if (isTopTier) score += 30;
+        else if (isMomentum) score += 20;
+        
+        if (isTrendingSector) score += 30;
+        if (isExpansionFund) score += 20;
+        
+        if (ipo.market === 'Main Market') score += 10;
+        else if (ipo.market === 'ACE Market') score += 5;
+
+        let predGrade = 'C';
+        if (score >= 70) predGrade = 'A';
+        else if (score >= 40) predGrade = 'B';
+
+        // Special case for Automation
+        if (sector.includes('automation') && predGrade === 'B') {
+            return { 
+                grade: `Pred: B`, 
+                reason: `<b>Pre-OS Grade B</b> (Score: ${score})<br>💡 Note: If classified as Tech/Semi, jumps to Grade A.<br>⏳ Waiting for OS data.` 
+            };
         }
-        return { grade: 'Pending', reason: 'Waiting for oversubscription (OS) data.' };
+
+        return { 
+            grade: `Pred: ${predGrade}`, 
+            reason: `<b>Pre-OS Grade ${predGrade}</b> (Score: ${score}/100)<br>⏳ Waiting for OS data.` 
+        };
     }
     
     // Stage 3 & 4 - Subscription Results In
@@ -1015,7 +1038,8 @@ function createIPOCard(ipo, index = 0) {
     const gradeObj = getIpoGrade(ipo);
     const grade = gradeObj.grade;
     const prediction = getBoomPrediction(ipo);
-    const gradeColor = grade === 'A' ? '#10b981' : grade === 'B' ? '#f59e0b' : (grade === 'Pending' ? '#a5b4fc' : '#ef4444');
+    const baseGrade = grade.replace('Pred: ', '');
+    const gradeColor = baseGrade === 'A' ? '#10b981' : baseGrade === 'B' ? '#f59e0b' : (baseGrade === 'Pending' ? '#a5b4fc' : '#ef4444');
 
     let dateDisplay = '<span style="color: var(--text-dim);">TBA</span>';
     if (ipo.stage === 3 || ipo.stage === 4) {
