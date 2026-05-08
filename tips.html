@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hunter's Tips | IPO Execution Playbook</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+    <div class="background-blobs">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2" style="background: rgba(16, 185, 129, 0.2);"></div>
+        <div class="blob blob-3" style="background: rgba(245, 158, 11, 0.2);"></div>
+    </div>
+
+    <nav class="glass-header">
+        <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
+            <div class="logo" onclick="location.href='index.html'" style="cursor: pointer;">
+                <i data-lucide="trending-up"></i>
+                <span class="logo-text"><span>Bursa</span>IPO</span>
+            </div>
+            <div class="nav-links">
+                <a href="index.html" class="btn-moomoo" style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1);">
+                    <i data-lucide="layout-dashboard"></i> <span class="nav-text">Dashboard</span>
+                </a>
+                <a href="strategy.html" class="btn-moomoo" style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1);">
+                    <i data-lucide="line-chart"></i> <span class="nav-text">Strategy</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container">
+        <header class="hero" style="text-align: center; margin-bottom: 4rem;">
+            <div style="display: flex; align-items: center; justify-content: center; gap: 0.75rem; margin-bottom: 1rem;">
+                <i data-lucide="sparkles" style="color: #f59e0b;"></i>
+                <span style="font-weight: 800; font-size: 0.8rem; color: #f59e0b; text-transform: uppercase; letter-spacing: 0.15em;">Pro Execution Guide</span>
+            </div>
+            <h1>Hunter's <span>IPO Tips</span></h1>
+            <p>Master the art of the listing day and maximize your capital allocation efficiency.</p>
+        </header>
+
+        <section class="glass-card" style="margin-bottom: 4rem; background: linear-gradient(135deg, rgba(255,255,255,0.05), transparent); border: 1px solid rgba(255,255,255,0.1);">
+            <h2 style="margin-bottom: 1.5rem; text-align: center;"><i data-lucide="award" style="vertical-align: middle; margin-right: 10px; color: #10b981;"></i> Decoding the <span>Hunter Grade</span></h2>
+            <p style="text-align: center; color: var(--text-dim); margin-bottom: 2.5rem;">How we rank IPOs based on institutional demand and market sentiment.</p>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem;">
+                <div style="padding: 1.5rem; border-radius: 1.5rem; background: rgba(16, 185, 129, 0.05); border: 1px solid rgba(16, 185, 129, 0.2);">
+                    <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem;">
+                        <span style="background: #10b981; color: white; padding: 0.25rem 0.75rem; border-radius: 0.5rem; font-weight: 800;">A</span>
+                        <h3 style="margin: 0; color: #10b981;">High Alpha</h3>
+                    </div>
+                    <ul style="padding-left: 1.25rem; font-size: 0.85rem; color: var(--text-dim); line-height: 1.6;">
+                        <li>Oversubscription > 50x</li>
+                        <li>Tech / AI / Green Energy Sectors</li>
+                        <li>PE Ratio lower than peers</li>
+                        <li>Tier 1 Cornerstone Investors</li>
+                    </ul>
+                </div>
+                <div style="padding: 1.5rem; border-radius: 1.5rem; background: rgba(245, 158, 11, 0.05); border: 1px solid rgba(245, 158, 11, 0.2);">
+                    <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem;">
+                        <span style="background: #f59e0b; color: white; padding: 0.25rem 0.75rem; border-radius: 0.5rem; font-weight: 800;">B</span>
+                        <h3 style="margin: 0; color: #f59e0b;">Steady Growth</h3>
+                    </div>
+                    <ul style="padding-left: 1.25rem; font-size: 0.85rem; color: var(--text-dim); line-height: 1.6;">
+                        <li>Oversubscription 20x - 50x</li>
+                        <li>Industrial / Consumer Goods</li>
+                        <li>Fair Valuation (Market Average)</li>
+                        <li>Consistent Dividend Policy</li>
+                    </ul>
+                </div>
+                <div style="padding: 1.5rem; border-radius: 1.5rem; background: rgba(239, 68, 68, 0.05); border: 1px solid rgba(239, 68, 68, 0.2);">
+                    <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem;">
+                        <span style="background: #ef4444; color: white; padding: 0.25rem 0.75rem; border-radius: 0.5rem; font-weight: 800;">C</span>
+                        <h3 style="margin: 0; color: #ef4444;">High Risk</h3>
+                    </div>
+                    <ul style="padding-left: 1.25rem; font-size: 0.85rem; color: var(--text-dim); line-height: 1.6;">
+                        <li>Oversubscription < 20x</li>
+                        <li>Commodity / Legacy Sectors</li>
+                        <li>High PE Ratio (> Industry Avg)</li>
+                        <li>High Debt-to-Equity Ratio</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+            <!-- Tip 4 -->
+            <div class="glass-card" style="margin-bottom: 2.5rem; border-top: 4px solid #8b5cf6;">
+                <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem;">
+                    <div style="background: rgba(139, 92, 246, 0.1); padding: 0.75rem; border-radius: 0.75rem; color: #8b5cf6;">
+                        <i data-lucide="moon"></i>
+                    </div>
+                    <h2 style="margin: 0; font-size: 1.25rem;">The <span>[S] Factor</span></h2>
+                </div>
+                <p style="color: var(--text-main); line-height: 1.6; margin-bottom: 1.5rem;">
+                    In Malaysia, Shariah compliance is a massive demand driver.
+                </p>
+                <div style="background: rgba(0,0,0,0.2); padding: 1.25rem; border-radius: 0.75rem; border: 1px solid rgba(255,255,255,0.05);">
+                    <strong style="color: #8b5cf6; display: block; margin-bottom: 0.5rem;">The Stat:</strong>
+                    Shariah-compliant IPOs have access to Islamic funds and a wider retail pool. This often leads to <b>30-50% higher oversubscription</b> compared to non-shariah stocks in the same sector.
+                </div>
+            </div>
+
+            <!-- Tip 5 -->
+            <div class="glass-card" style="margin-bottom: 2.5rem; border-top: 4px solid #ec4899;">
+                <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem;">
+                    <div style="background: rgba(236, 72, 153, 0.1); padding: 0.75rem; border-radius: 0.75rem; color: #ec4899;">
+                        <i data-lucide="anchor"></i>
+                    </div>
+                    <h2 style="margin: 0; font-size: 1.25rem;">Cornerstone <span>Anchors</span></h2>
+                </div>
+                <p style="color: var(--text-main); line-height: 1.6; margin-bottom: 1.5rem;">
+                    Look for big names in the Prospectus Summary.
+                </p>
+                <div style="background: rgba(0,0,0,0.2); padding: 1.25rem; border-radius: 0.75rem; border: 1px solid rgba(255,255,255,0.05);">
+                    <strong style="color: #ec4899; display: block; margin-bottom: 0.5rem;">The Safety Signal:</strong>
+                    If institutions like <b>KWAP, EPF, or AIA</b> are cornerstone investors, the IPO has passed rigorous due diligence. These stocks rarely fall below their IPO price on Day 1.
+                </div>
+            </div>
+
+            <!-- Tip 6 -->
+            <div class="glass-card" style="margin-bottom: 2.5rem; border-top: 4px solid #06b6d4;">
+                <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem;">
+                    <div style="background: rgba(6, 182, 212, 0.1); padding: 0.75rem; border-radius: 0.75rem; color: #06b6d4;">
+                        <i data-lucide="shield-check"></i>
+                    </div>
+                    <h2 style="margin: 0; font-size: 1.25rem;">Price <span>Stabilization</span></h2>
+                </div>
+                <p style="color: var(--text-main); line-height: 1.6; margin-bottom: 1.5rem;">
+                    Ever heard of the "Green Shoe"? It's your safety net.
+                </p>
+                <div style="background: rgba(0,0,0,0.2); padding: 1.25rem; border-radius: 0.75rem; border: 1px solid rgba(255,255,255,0.05);">
+                    <strong style="color: #06b6d4; display: block; margin-bottom: 0.5rem;">How to check:</strong>
+                    Open the Prospectus (PDF) and <b>Ctrl+F</b> for <b>"Stabilizing Manager"</b>. If you see an IB assigned to this role, they will buy shares to prevent the price from dropping below the IPO price for the first 30 days. This is a massive "Safety Shield" for your capital.
+                </div>
+            </div>
+
+            <!-- Tip 7 -->
+            <div class="glass-card" style="margin-bottom: 2.5rem; border-top: 4px solid #ef4444;">
+                <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem;">
+                    <div style="background: rgba(239, 68, 68, 0.1); padding: 0.75rem; border-radius: 0.75rem; color: #ef4444;">
+                        <i data-lucide="lock"></i>
+                    </div>
+                    <h2 style="margin: 0; font-size: 1.25rem;">Promoter <span>Lock-up</span></h2>
+                </div>
+                <p style="color: var(--text-main); line-height: 1.6; margin-bottom: 1.5rem;">
+                    Founders can't just "dump and run" in Malaysia.
+                </p>
+                <div style="background: rgba(0,0,0,0.2); padding: 1.25rem; border-radius: 0.75rem; border: 1px solid rgba(255,255,255,0.05);">
+                    <strong style="color: #ef4444; display: block; margin-bottom: 0.5rem;">The Rule:</strong>
+                    Major shareholders are usually <b>locked for 6 months to 3 years</b>. This means they CANNOT sell. If you see a long lock-up period, it means the founders are committed to growing the company value post-listing.
+                </div>
+            </div>
+
+            <!-- Tip 8 -->
+            <div class="glass-card" style="margin-bottom: 2.5rem; border-top: 4px solid #fbbf24;">
+                <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem;">
+                    <div style="background: rgba(251, 191, 36, 0.1); padding: 0.75rem; border-radius: 0.75rem; color: #fbbf24;">
+                        <i data-lucide="coins"></i>
+                    </div>
+                    <h2 style="margin: 0; font-size: 1.25rem;">Dividend <span>Policy</span></h2>
+                </div>
+                <p style="color: var(--text-main); line-height: 1.6; margin-bottom: 1.5rem;">
+                    Look for the "Dividend Policy" section in the prospectus summary.
+                </p>
+                <div style="background: rgba(0,0,0,0.2); padding: 1.25rem; border-radius: 0.75rem; border: 1px solid rgba(255,255,255,0.05);">
+                    <strong style="color: #fbbf24; display: block; margin-bottom: 0.5rem;">Passive Income:</strong>
+                    An IPO with a <b>40% - 60% dividend payout ratio</b> is extremely attractive for funds. This creates consistent buying demand every quarter, which helps support the share price even during market downturns.
+                </div>
+            </div>
+        </div>
+            <!-- Tip 1 -->
+            <div class="glass-card" style="margin-bottom: 2.5rem; border-top: 4px solid #3b82f6;">
+                <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem;">
+                    <div style="background: rgba(59, 130, 246, 0.1); padding: 0.75rem; border-radius: 0.75rem; color: #3b82f6;">
+                        <i data-lucide="timer"></i>
+                    </div>
+                    <h2 style="margin: 0; font-size: 1.25rem;">The 9:00 AM <span>Battle (TOP)</span></h2>
+                </div>
+                <p style="color: var(--text-main); line-height: 1.6; margin-bottom: 1.5rem;">
+                    Between 8:30 AM and 9:00 AM, you will see the <b>Theoretical Opening Price (TOP)</b>. This is the price where the most orders match.
+                </p>
+                <div style="background: rgba(0,0,0,0.2); padding: 1.25rem; border-radius: 0.75rem; border: 1px solid rgba(255,255,255,0.05);">
+                    <strong style="color: #3b82f6; display: block; margin-bottom: 0.5rem;">The "Last Minute" Trap:</strong>
+                    The TOP at 8:45 AM is usually fake. Watch the <b>8:58 AM - 8:59 AM</b> window. If the TOP is significantly higher than our "Est. Open" on the dashboard, the hype is real. If the TOP starts dropping in the last 30 seconds, big sellers are entering—prepare to sell quickly!
+                </div>
+            </div>
+
+            <!-- Tip 2 -->
+            <div class="glass-card" style="margin-bottom: 2.5rem; border-top: 4px solid #10b981;">
+                <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem;">
+                    <div style="background: rgba(16, 185, 129, 0.1); padding: 0.75rem; border-radius: 0.75rem; color: #10b981;">
+                        <i data-lucide="pie-chart"></i>
+                    </div>
+                    <h2 style="margin: 0; font-size: 1.25rem;">The <span>50/50 Rule</span></h2>
+                </div>
+                <p style="color: var(--text-main); line-height: 1.6; margin-bottom: 1.5rem;">
+                    Fear of missing out vs. greed is the biggest enemy on listing day.
+                </p>
+                <div style="background: rgba(0,0,0,0.2); padding: 1.25rem; border-radius: 0.75rem; border: 1px solid rgba(255,255,255,0.05);">
+                    <strong style="color: #10b981; display: block; margin-bottom: 0.5rem;">The Strategy:</strong>
+                    Sell 50% of your shares within the first 15 minutes to lock in a "Free Trade." Let the remaining 50% run until the end of the day or until it hits the Analyst Average TP.
+                </div>
+            </div>
+
+            <!-- Tip 3 -->
+            <div class="glass-card" style="margin-bottom: 2.5rem; border-top: 4px solid #f59e0b;">
+                <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem;">
+                    <div style="background: rgba(245, 158, 11, 0.1); padding: 0.75rem; border-radius: 0.75rem; color: #f59e0b;">
+                        <i data-lucide="zap"></i>
+                    </div>
+                    <h2 style="margin: 0; font-size: 1.25rem;">No MITI <span>Scarcity</span></h2>
+                </div>
+                <p style="color: var(--text-main); line-height: 1.6; margin-bottom: 1.5rem;">
+                    IPOs like <b>SkyeChip</b> are special because they have no MITI tranche.
+                </p>
+                <div style="background: rgba(0,0,0,0.2); padding: 1.25rem; border-radius: 0.75rem; border: 1px solid rgba(255,255,255,0.05);">
+                    <strong style="color: #f59e0b; display: block; margin-bottom: 0.5rem;">Why it matters:</strong>
+                    Normal IPOs have 12.5% supply from MITI. "No MITI" means 100% of the institutional demand must fight for fewer shares. This usually leads to a <b>sustained rally</b> rather than a "dump and pump."
+                </div>
+            </div>
+
+            <!-- Tip 9 -->
+            <div class="glass-card" style="margin-bottom: 2.5rem; border-top: 4px solid #ef4444;">
+                <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem;">
+                    <div style="background: rgba(239, 68, 68, 0.1); padding: 0.75rem; border-radius: 0.75rem; color: #ef4444;">
+                        <i data-lucide="flame"></i>
+                    </div>
+                    <h2 style="margin: 0; font-size: 1.25rem;">Broker <span>Heat Check</span></h2>
+                </div>
+                <p style="color: var(--text-main); line-height: 1.6; margin-bottom: 1.5rem;">
+                    Watch for "Fully Subscribed" reports from brokers like <b>M+ Online</b> 12-24h before closing.
+                </p>
+                <div style="background: rgba(0,0,0,0.2); padding: 1.25rem; border-radius: 0.75rem; border: 1px solid rgba(255,255,255,0.05);">
+                    <strong style="color: #ef4444; display: block; margin-bottom: 0.5rem;">The FOMO Signal:</strong>
+                    If a broker is "fully sub" before the official close, it's a massive indicator of retail frenzy. Expect the final Oversubscription (OS) to be 2-3x higher than initial estimates.
+                </div>
+            </div>
+        </div>
+
+        <section class="glass-card" style="margin-bottom: 4rem;">
+            <h2 style="margin-bottom: 1.5rem;"><i data-lucide="alert-circle" style="vertical-align: middle; margin-right: 10px; color: #ef4444;"></i> Common <span>Hunter Mistakes</span></h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem;">
+                <div style="padding: 1.5rem; background: rgba(239, 68, 68, 0.05); border-radius: 1rem; border: 1px solid rgba(239, 68, 68, 0.2);">
+                    <h4 style="color: #ef4444; margin-top: 0;">Ignoring the IB</h4>
+                    <p style="font-size: 0.9rem; margin: 0; color: var(--text-dim);">Certain Investment Banks (like M&A Securities) have a track record of higher Day 1 pops. Don't ignore the pedigree of the underwriter.</p>
+                </div>
+                <div style="padding: 1.5rem; background: rgba(239, 68, 68, 0.05); border-radius: 1rem; border: 1px solid rgba(239, 68, 68, 0.2);">
+                    <h4 style="color: #ef4444; margin-top: 0;">Application Late</h4>
+                    <p style="font-size: 0.9rem; margin: 0; color: var(--text-dim);">Don't wait until 4:55 PM on the closing date. System traffic can lag and you might miss the boat. Aim for 24 hours before closing.</p>
+                </div>
+                <div style="padding: 1.5rem; background: rgba(239, 68, 68, 0.05); border-radius: 1rem; border: 1px solid rgba(239, 68, 68, 0.2);">
+                    <h4 style="color: #ef4444; margin-top: 0;">Market Order at Open</h4>
+                    <p style="font-size: 0.9rem; margin: 0; color: var(--text-dim);">Using "Market Orders" at 9:00 AM can be dangerous if the bid/ask spread is wide. Use "Limit Orders" to control your exit price.</p>
+                </div>
+            </div>
+        </section>
+
+        <section style="text-align: center; padding: 4rem 2rem; background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(16, 185, 129, 0.1)); border-radius: 2rem; border: 1px solid rgba(255,255,255,0.1);">
+            <i data-lucide="graduation-cap" style="width: 48px; height: 48px; color: var(--primary-light); margin-bottom: 1.5rem;"></i>
+            <h2 style="margin-bottom: 1rem;">Ready to Apply?</h2>
+            <p style="color: var(--text-dim); max-width: 600px; margin: 0 auto 2.5rem auto;">Use the Ballot Calculator to find your optimal tier and check the "Hunter Pro" strategy for financing options.</p>
+            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                <a href="index.html" class="btn-moomoo" style="padding: 1rem 2rem; text-decoration: none; border-radius: 0.75rem;">Return to Dashboard</a>
+                <a href="strategy.html" class="btn-moomoo" style="padding: 1rem 2rem; text-decoration: none; border-radius: 0.75rem; background: var(--primary); color: white;">View Strategy</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="glass-footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2026 IPO Hunter Dashboard. Trading involves risk.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>

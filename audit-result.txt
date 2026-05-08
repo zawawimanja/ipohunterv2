@@ -1,0 +1,57 @@
+﻿Sunway Healthcare Holdings Berhad | Main Market | Grade:A | OS:5.58 | PE:16.5 | IB:Maybank | Open:17.2% | Hold:63.4% 
+SEMICO Berhad | ACE Market | Grade:B | OS:28.9 | PE:11.5 | IB:Affin Hwang | Open:80.0% | Hold:106.0% 
+GHS Group Berhad | ACE Market | Grade:C | OS:4.8 | PE:15.2 | IB:TA Securities | Open:-4.0% | Hold:-24.0% 
+Kee Ming Group Berhad | ACE Market | Grade:B | OS:54.16 | PE:12.4 | IB:TA Securities | Open:107.9% | Hold:102.6% 
+Oriental Kopi Holdings | Main Market | Grade:A | OS:26.35 | PE:32.3 | IB:CIMB | Open:47.7% | Hold:140.9% 
+99 Speed Mart Retail | Main Market | Grade:A | OS:3.04 | PE:50.2 | IB:CIMB | Open:12.1% | Hold:110.9% 
+Master Tec Group Berhad | ACE Market | Grade:C | OS:7.11 | PE:38.9 | IB:SJ Securities | Open:0.0% | Hold:174.4% ISSUE: C but huge hold gains
+Johor Plantations Group | Main Market | Grade:C | OS:3.54 | PE:11.7 | IB:RHB | Open:19.0% | Hold:104.8% ISSUE: C but huge hold gains
+Feytech Holdings | Main Market | Grade:C | OS:15.64 | PE:18.1 | IB:TA Securities | Open:37.5% | Hold:-72.5% ISSUE: C but strong open >30%
+Alpha IVF Group | Main Market | Grade:C | OS:1.73 | PE:24.2 | IB:AmInvestment | Open:0.0% | Hold:-15.6% 
+Northern Solar Holdings | ACE Market | Grade:C | OS:73.2 | PE:18.7 | IB:M&A Securities | Open:100.0% | Hold:20.0% ISSUE: C but strong open >30%
+Supreme Consolidated | ACE Market | Grade:B | OS:N/A | PE:9 | IB:M&A Securities | Open:60.0% | Hold:20.0% 
+Kucingko Berhad | ACE Market | Grade:C | OS:99.02 | PE:25 | IB:M&A Securities | Open:83.3% | Hold:-73.3% ISSUE: C but strong open >30%
+Prolintas Infra Business Trust | Main Market | Grade:C | OS:3.59 | PE:35.8 | IB:AmInvestment | Open:0.0% | Hold:1.1% 
+Keyfield International Berhad | Main Market | Grade:C | OS:9.69 | PE:8 | IB:M&A Securities | Open:88.9% | Hold:55.6% ISSUE: C but huge hold gains
+MKH Oil Palm (East Kalimantan) | Main Market | Grade:C | OS:8.43 | PE:7.6 | IB:M&A Securities | Open:1.6% | Hold:-3.2% 
+Mega Fortris Berhad | Main Market | Grade:C | OS:1.05 | PE:16.2 | IB:MIDF | Open:-1.5% | Hold:14.9% 
+Azam Jaya Berhad | Main Market | Grade:A | OS:23 | PE:16.5 | IB:Maybank | Open:39.7% | Hold:33.3% 
+Pantech Global Berhad | Main Market | Grade:A | OS:N/A | PE:11.4 | IB:Public Investment | Open:11.8% | Hold:-23.5% ISSUE: A but lost >20%
+Wawasan Dengkil Holdings | Main Market | Grade:A | OS:56 | PE:N/A | IB:Public Investment | Open:9.1% | Hold:12.7% 
+Saliran Group Berhad | Main Market | Grade:A | OS:76.03 | PE:14.5 | IB:CIMB | Open:11.1% | Hold:-53.3% ISSUE: A but lost >20%
+Adnex Group Berhad | ACE Market | Grade:B | OS:3.23 | PE:N/A | IB:Public Investment Bank | Open:25.0% | Hold:20.0% 
+OGX Group Berhad | ACE Market | Grade:C | OS:10.11 | PE:10 | IB:UOB Kay Hian | Open:-20.0% | Hold:-2.9% 
+Teamstar Berhad | ACE Market | Grade:C | OS:4.2 | PE:10.5 | IB:TA Securities | Open:3.8% | Hold:-5.8% 
+Hock Soon Capital Berhad | Main Market | Grade:C | OS:1.36 | PE:18.5 | IB:M&A Securities | Open:-11.7% | Hold:-36.7% 
+Ambest Group Berhad | ACE Market | Grade:B | OS:46.07 | PE:12.8 | IB:Malacca Securities | Open:16.0% | Hold:20.0% 
+ISF Group Berhad | ACE Market | Grade:B | OS:31.14 | PE:14.2 | IB:Alliance Islamic Bank | Open:51.5% | Hold:16.7% 
+One Gasmaster Holdings Berhad | ACE Market | Grade:B | OS:25.24 | PE:11.3 | IB:Malacca Securities | Open:12.0% | Hold:12.0% 
+SBS Nexus Berhad | ACE Market | Grade:B | OS:22.3 | PE:14.2 | IB:M&A Securities | Open:0.0% | Hold:-4.0% 
+Kawan Renergy Berhad | ACE Market | Grade:B | OS:94.99 | PE:10.8 | IB:M&A Securities | Open:50.0% | Hold:73.3% 
+UUE Holdings Berhad | ACE Market | Grade:C | OS:103.83 | PE:65 | IB:M&A Securities | Open:175.0% | Hold:254.2% ISSUE: C but huge hold gains
+Ocean Fresh Berhad | ACE Market | Grade:B | OS:76.22 | PE:15.5 | IB:KAF Investment | Open:114.3% | Hold:107.1% 
+Farm Price Berhad | ACE Market | Grade:B | OS:91.35 | PE:17.9 | IB:Alliance IB | Open:100.0% | Hold:87.5% 
+Steel Hawk Berhad | ACE Market | Grade:B | OS:276.83 | PE:10.4 | IB:UOB Kay Hian | Open:100.0% | Hold:133.3% 
+Wentel Engineering | ACE Market | Grade:C | OS:17.75 | PE:11.3 | IB:TA Securities | Open:0.0% | Hold:-7.7% 
+Zantat Holdings | ACE Market | Grade:B | OS:129.99 | PE:10.4 | IB:M&A Securities | Open:60.0% | Hold:40.0% 
+Mini-Mart Express | ACE Market | Grade:C | OS:5 | PE:N/A | IB:Small Broker | Open:-10.0% | Hold:-24.0% 
+
+--- FLAGGED ISSUES ---
+Master Tec Group Berhad | ACE Market | Grade:C | OS:7.11 | PE:38.9 | IB:SJ Securities | Open:0.0% | Hold:174.4% ISSUE: C but huge hold gains
+Johor Plantations Group | Main Market | Grade:C | OS:3.54 | PE:11.7 | IB:RHB | Open:19.0% | Hold:104.8% ISSUE: C but huge hold gains
+Feytech Holdings | Main Market | Grade:C | OS:15.64 | PE:18.1 | IB:TA Securities | Open:37.5% | Hold:-72.5% ISSUE: C but strong open >30%
+Northern Solar Holdings | ACE Market | Grade:C | OS:73.2 | PE:18.7 | IB:M&A Securities | Open:100.0% | Hold:20.0% ISSUE: C but strong open >30%
+Kucingko Berhad | ACE Market | Grade:C | OS:99.02 | PE:25 | IB:M&A Securities | Open:83.3% | Hold:-73.3% ISSUE: C but strong open >30%
+Keyfield International Berhad | Main Market | Grade:C | OS:9.69 | PE:8 | IB:M&A Securities | Open:88.9% | Hold:55.6% ISSUE: C but huge hold gains
+Pantech Global Berhad | Main Market | Grade:A | OS:N/A | PE:11.4 | IB:Public Investment | Open:11.8% | Hold:-23.5% ISSUE: A but lost >20%
+Saliran Group Berhad | Main Market | Grade:A | OS:76.03 | PE:14.5 | IB:CIMB | Open:11.1% | Hold:-53.3% ISSUE: A but lost >20%
+UUE Holdings Berhad | ACE Market | Grade:C | OS:103.83 | PE:65 | IB:M&A Securities | Open:175.0% | Hold:254.2% ISSUE: C but huge hold gains
+
+--- NON-LISTED ---
+SkyeChip Berhad | Stage 1 | Main Market | Grade:Pending
+MTT Shipping and Logistics Bhd | Stage 3 | Main Market | Grade:Pending
+Empire Premium Food Berhad | Stage 3 | Main Market | Grade:Pending
+AMS Advanced Material Berhad | Stage 3 | ACE Market | Grade:Pending
+Golden Destinations Group Berhad | Stage 3 | ACE Market | Grade:Pending
+Aerodyne Group Berhad | Stage 2 | Main Market | Grade:Pending
+Carsome Holdings Berhad | Stage 2 | Main Market | Grade:Pending

@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bursa IPO Tracker | Track Malaysian IPOs</title>
+    <meta name="description" content="Track Malaysian IPOs through three stages: Exposure, Application, and Results.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="data.js?v=1.1"></script>
+    <script defer src="https://cdn.vercel-insights.com/v1/script.js"></script>
+</head>
+
+<body>
+    <div class="background-blobs">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
+
+    <nav class="glass-header">
+        <div class="container">
+            <div class="logo">
+                <i data-lucide="trending-up"></i>
+                <span class="logo-text"><span>Bursa</span>IPO</span>
+            </div>
+            <div class="nav-links">
+        </div>
+    </nav>
+
+    <main class="container">
+        <header class="hero">
+            <div style="display: flex; align-items: center; justify-content: center; gap: 0.75rem; margin-bottom: 1rem;">
+                <div class="live-indicator pulse-primary" style="width: 12px; height: 12px; background: #10b981; border-radius: 50%; box-shadow: 0 0 10px #10b981;"></div>
+                <span style="font-weight: 800; font-size: 0.8rem; color: #10b981; text-transform: uppercase; letter-spacing: 0.15em;">Live Market Sync Active</span>
+            </div>
+            <h1>Malaysian IPO <span>Snapshot</span></h1>
+            <p>Your premium gateway to tracking upcoming and active Initial Public Offerings on Bursa Malaysia.</p>
+            <div class="last-updated">
+                <div class="update-info">
+                    <span class="dot"></span>
+                    <span id="update-time">Syncing latest market prices...</span>
+                </div>
+                <div style="display: flex; gap: 1rem;">
+                    <button onclick="fetchLiveUpdates()" class="btn-moomoo" style="background: rgba(99, 102, 241, 0.1); border: 1px solid rgba(99, 102, 241, 0.3); cursor: pointer;">
+                        <i data-lucide="refresh-cw"></i> Force Refresh
+                    </button>
+                    <button onclick="openCalculatorModal()" class="btn-moomoo" style="background: rgba(245, 158, 11, 0.1); border: 1px solid rgba(245, 158, 11, 0.3); cursor: pointer; color: #f59e0b; font-weight: 800; border-radius: 2rem;">
+                        <i data-lucide="crown"></i> Hunter Pro Hub
+                    </button>
+                    <a href="https://mplusonline.com/campaigns/newuser?lang=en-US&inviteCode=DMEICG&activityId=86&_scnl=1111738" target="_blank" class="btn-moomoo hero-cta" style="text-decoration: none; background: linear-gradient(135deg, var(--primary), #4f46e5); border-color: rgba(255,255,255,0.1);">
+                        <i data-lucide="shield-check"></i> Open M+ Account
+                    </a>
+                    <a href="https://www.moomoo.com/my/promotion/2511-referree?global_content=%7B%22promote_id%22%3A15066%2C%22invite%22%3A104903369%7D" target="_blank" class="btn-moomoo hero-cta" style="text-decoration: none;">
+                        <i data-lucide="pie-chart"></i> Open Moomoo Account
+                    </a>
+                    <button onclick="openSyncHub()" class="btn-moomoo hero-cta" style="text-decoration: none; background: linear-gradient(135deg, #10b981, #059669); border-color: rgba(16, 185, 129, 0.4); color: white;">
+                        <i data-lucide="zap"></i> Hunter Sync Hub
+                    </button>
+                    <a href="strategy.html" class="btn-moomoo hero-cta" style="text-decoration: none; background: rgba(56, 189, 248, 0.1); border-color: rgba(56, 189, 248, 0.3); color: var(--accent-primary);">
+                        <i data-lucide="line-chart"></i> Strategy
+                    </a>
+                    <a href="tips.html" class="btn-moomoo hero-cta" style="text-decoration: none; background: rgba(245, 158, 11, 0.1); border-color: rgba(245, 158, 11, 0.3); color: #f59e0b;">
+                        <i data-lucide="sparkles"></i> Hunter's Tips
+                    </a>
+                </div>
+            </div>
+        </header>
+
+        <div id="reminder-banner-container"></div>
+
+        <section class="ipo-stages">
+            <div class="tabs-container glass-card">
+                <button class="tab-btn active" data-stage="1">
+                    <span class="stage-num">01</span>
+                    <div class="tab-label">
+                        <span class="title">Draft Stage</span>
+                        <span class="desc">Exposure Period</span>
+                    </div>
+                </button>
+                <button class="tab-btn" data-stage="2">
+                    <span class="stage-num">02</span>
+                    <div class="tab-label">
+                        <span class="title">MITI Stage</span>
+                        <span class="desc">Bumi VIP Phase</span>
+                    </div>
+                </button>
+                <button class="tab-btn" data-stage="3">
+                    <span class="stage-num">03</span>
+                    <div class="tab-label">
+                        <span class="title">Public Stage</span>
+                        <span class="desc">Open for Everyone</span>
+                    </div>
+                </button>
+                <button class="tab-btn" data-stage="4">
+                    <span class="stage-num">04</span>
+                    <div class="tab-label">
+                        <span class="title">Pre-Listing</span>
+                        <span class="desc">Balloting Results</span>
+                    </div>
+                </button>
+                <button class="tab-btn" data-stage="5">
+                    <span class="stage-num">05</span>
+                    <div class="tab-label">
+                        <span class="title">Listed Stage</span>
+                        <span class="desc">Results & Trading</span>
+                    </div>
+                </button>
+            </div>
+
+            <div class="grade-filter glass-card" style="margin-bottom: 2rem; padding: 1rem 1.5rem; display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; justify-content: space-between;">
+                <div style="display: flex; align-items: center; gap: 1rem; flex-wrap: wrap;">
+                    <span style="font-weight: 600; color: var(--text-dim); display: flex; align-items: center; gap: 0.5rem;">
+                        <i data-lucide="filter" style="width: 18px;"></i> Grade:
+                    </span>
+                    <button class="filter-btn active" data-grade="all" style="padding: 0.5rem 1.25rem; border-radius: 2rem; border: 1px solid var(--primary); background: var(--primary); color: white; cursor: pointer; transition: all 0.3s; font-weight: 500;">All</button>
+                    <button class="filter-btn" data-grade="A" style="padding: 0.5rem 1.25rem; border-radius: 2rem; border: 1px solid rgba(255,255,255,0.2); background: transparent; color: var(--text-main); cursor: pointer; transition: all 0.3s; display: flex; align-items: center; gap: 0.5rem; font-weight: 500;">
+                        <i data-lucide="shield-check" style="width: 16px; color: #10b981;"></i> Grade A
+                    </button>
+                    <button class="filter-btn" data-grade="B" style="padding: 0.5rem 1.25rem; border-radius: 2rem; border: 1px solid rgba(255,255,255,0.2); background: transparent; color: var(--text-main); cursor: pointer; transition: all 0.3s; display: flex; align-items: center; gap: 0.5rem; font-weight: 500;">
+                        <i data-lucide="zap" style="width: 16px; color: #f59e0b;"></i> Grade B
+                    </button>
+                    <button class="filter-btn" data-grade="C" style="padding: 0.5rem 1.25rem; border-radius: 2rem; border: 1px solid rgba(255,255,255,0.2); background: transparent; color: var(--text-main); cursor: pointer; transition: all 0.3s; display: flex; align-items: center; gap: 0.5rem; font-weight: 500;">
+                        <i data-lucide="alert-triangle" style="width: 16px; color: #ef4444;"></i> Grade C
+                    </button>
+                    <button class="filter-btn" data-grade="Pending" style="padding: 0.5rem 1.25rem; border-radius: 2rem; border: 1px solid rgba(255,255,255,0.2); background: transparent; color: var(--text-main); cursor: pointer; transition: all 0.3s; display: flex; align-items: center; gap: 0.5rem; font-weight: 500;">
+                        <i data-lucide="clock" style="width: 16px; color: #a5b4fc;"></i> Pending
+                    </button>
+                </div>
+                
+                <div style="display: flex; align-items: center; gap: 1rem; flex-wrap: wrap;">
+                    <span style="font-weight: 600; color: var(--text-dim); display: flex; align-items: center; gap: 0.5rem;">
+                        <i data-lucide="calendar" style="width: 18px;"></i> Year:
+                    </span>
+                    <button class="year-btn active" data-year="all" style="padding: 0.5rem 1.25rem; border-radius: 2rem; border: 1px solid var(--primary); background: var(--primary); color: white; cursor: pointer; transition: all 0.3s; font-weight: 500;">All</button>
+                    <button class="year-btn" data-year="2026" style="padding: 0.5rem 1.25rem; border-radius: 2rem; border: 1px solid rgba(255,255,255,0.2); background: transparent; color: var(--text-main); cursor: pointer; transition: all 0.3s; font-weight: 500;">2026</button>
+                    <button class="year-btn" data-year="2025" style="padding: 0.5rem 1.25rem; border-radius: 2rem; border: 1px solid rgba(255,255,255,0.2); background: transparent; color: var(--text-main); cursor: pointer; transition: all 0.3s; font-weight: 500;">2025</button>
+                    <button class="year-btn" data-year="2024" style="padding: 0.5rem 1.25rem; border-radius: 2rem; border: 1px solid rgba(255,255,255,0.2); background: transparent; color: var(--text-main); cursor: pointer; transition: all 0.3s; font-weight: 500;">2024</button>
+                    <button class="year-btn" data-year="2023" style="padding: 0.5rem 1.25rem; border-radius: 2rem; border: 1px solid rgba(255,255,255,0.2); background: transparent; color: var(--text-main); cursor: pointer; transition: all 0.3s; font-weight: 500;">2023</button>
+                    <button class="year-btn" data-year="2022" style="padding: 0.5rem 1.25rem; border-radius: 2rem; border: 1px solid rgba(255,255,255,0.2); background: transparent; color: var(--text-main); cursor: pointer; transition: all 0.3s; font-weight: 500;">2022</button>
+                    <button class="year-btn" data-year="2021" style="padding: 0.5rem 1.25rem; border-radius: 2rem; border: 1px solid rgba(255,255,255,0.2); background: transparent; color: var(--text-main); cursor: pointer; transition: all 0.3s; font-weight: 500;">2021</button>
+                    <button class="year-btn" data-year="2020" style="padding: 0.5rem 1.25rem; border-radius: 2rem; border: 1px solid rgba(255,255,255,0.2); background: transparent; color: var(--text-main); cursor: pointer; transition: all 0.3s; font-weight: 500;">2020</button>
+                    <button class="year-btn" data-year="2019" style="padding: 0.5rem 1.25rem; border-radius: 2rem; border: 1px solid rgba(255,255,255,0.2); background: transparent; color: var(--text-main); cursor: pointer; transition: all 0.3s; font-weight: 500;">2019</button>
+                </div>
+            </div>
+
+            <div class="search-sort-bar glass-card" style="margin-bottom: 2rem; padding: 1.25rem 1.5rem; display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; flex-wrap: wrap; border: 1px solid rgba(99, 102, 241, 0.3); background: rgba(15, 23, 42, 0.6); box-shadow: 0 8px 32px rgba(99, 102, 241, 0.1);">
+                <div class="search-container" style="position: relative; flex: 1; min-width: 250px;">
+                    <i data-lucide="search" style="position: absolute; left: 1.25rem; top: 50%; transform: translateY(-50%); width: 20px; color: #6366f1;"></i>
+                    <input type="text" id="ipo-search" placeholder="Search by company or sector..." style="width: 100%; padding: 0.85rem 1rem 0.85rem 3.25rem; border-radius: 2rem; border: 1px solid rgba(99, 102, 241, 0.4); background: rgba(0,0,0,0.4); color: white; outline: none; transition: all 0.3s; font-size: 0.95rem;">
+                </div>
+                
+                <div class="sort-container" style="display: flex; align-items: center; gap: 1rem;">
+                    <span style="font-weight: 600; color: #a5b4fc; display: flex; align-items: center; gap: 0.5rem; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.05em;">
+                        <i data-lucide="arrow-up-down" style="width: 18px;"></i> Organize:
+                    </span>
+                    <select id="ipo-sort" style="padding: 0.75rem 3rem 0.75rem 1.25rem; border-radius: 2rem; border: 1px solid rgba(99, 102, 241, 0.5); background: rgba(30, 41, 59, 0.8); color: white; outline: none; cursor: pointer; font-family: inherit; appearance: none; background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%236366f1%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpolyline%20points%3D%226%209%2012%2015%2018%209%22%3E%3C%2Fpolyline%3E%3C%2Fsvg%3E'); background-repeat: no-repeat; background-position: right 1.25rem center; background-size: 1.1rem; font-weight: 500; min-width: 200px; box-shadow: 0 4px 12px rgba(0,0,0,0.2);">
+                        <option value="newest">Latest Added</option>
+                        <option value="performance-desc">Highest Gains (Winners)</option>
+                        <option value="performance-asc">Biggest Drops (Losers)</option>
+                        <option value="name-asc">Alphabetical (A-Z)</option>
+                    </select>
+                </div>
+            </div>
+
+            <div id="ipo-grid" class="ipo-grid">
+                <!-- IPO Cards will be injected here by main.js -->
+                <div class="loading-state">
+                    <div class="spinner"></div>
+                    <p>Fetching latest IPO data...</p>
+                </div>
+            </div>
+
+            <section class="grade-guide glass-card" style="margin-bottom: 2rem; padding: 2.5rem; border: 1px solid rgba(99, 102, 241, 0.3);">
+                <div style="text-align: center; margin-bottom: 2.5rem;">
+                    <h2 style="margin-bottom: 0.5rem;">The Hunter <span>Strategy Guide</span></h2>
+                    <p style="color: var(--text-dim);">A unified look at our grading system and execution rules.</p>
+                </div>
+
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem;">
+                    <!-- Grade A -->
+                    <div style="background: rgba(16, 185, 129, 0.05); padding: 1.5rem; border-radius: 1rem; border: 1px solid rgba(16, 185, 129, 0.2);">
+                        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
+                            <div style="display: flex; align-items: center; gap: 0.75rem;">
+                                <i data-lucide="shield-check" style="color: #10b981; width: 24px;"></i>
+                                <h3 style="color: #10b981; margin: 0;">Grade A</h3>
+                            </div>
+                            <span class="badge" style="background: rgba(16,185,129,0.2); color: #10b981; border: 1px solid #10b981;">SWING</span>
+                        </div>
+                        <p style="font-size: 0.85rem; color: var(--text-dim); margin-bottom: 1rem; line-height: 1.5;">
+                            Main Market / GLC giants. High institutional support. <b>The Goal:</b> Hold for institutional accumulation throughout Day 1.
+                        </p>
+                        <ul style="font-size: 0.8rem; color: var(--text-main); list-style: none; padding: 0; margin-bottom: 1rem;">
+                            <li style="margin-bottom: 0.4rem;"><i data-lucide="check" style="width: 14px; color: #10b981;"></i> <b>OS:</b> > 20x</li>
+                            <li style="margin-bottom: 0.4rem;"><i data-lucide="check" style="width: 14px; color: #10b981;"></i> <b>PE:</b> Stable (< 15x)</li>
+                        </ul>
+                        <div style="font-size: 0.75rem; background: rgba(0,0,0,0.2); padding: 0.75rem; border-radius: 0.5rem; border-left: 3px solid #10b981;">
+                            <strong style="color: #10b981;">Pro Tip:</strong> Look for Tech/AI sectors. If OS is high, hold until 5:00 PM close for maximum gain.
+                        </div>
+                    </div>
+
+                    <!-- Grade B -->
+                    <div style="background: rgba(245, 158, 11, 0.05); padding: 1.5rem; border-radius: 1rem; border: 1px solid rgba(245, 158, 11, 0.2);">
+                        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
+                            <div style="display: flex; align-items: center; gap: 0.75rem;">
+                                <i data-lucide="zap" style="color: #f59e0b; width: 24px;"></i>
+                                <h3 style="color: #f59e0b; margin: 0;">Grade B</h3>
+                            </div>
+                            <span class="badge" style="background: rgba(245,158,11,0.2); color: #f59e0b; border: 1px solid #f59e0b;">SCALP</span>
+                        </div>
+                        <p style="font-size: 0.85rem; color: var(--text-dim); margin-bottom: 1rem; line-height: 1.5;">
+                            ACE Market growth plays. High retail hype. <b>The Goal:</b> Capture the initial morning spike and exit within 30 mins.
+                        </p>
+                        <ul style="font-size: 0.8rem; color: var(--text-main); list-style: none; padding: 0; margin-bottom: 1rem;">
+                            <li style="margin-bottom: 0.4rem;"><i data-lucide="check" style="width: 14px; color: #f59e0b;"></i> <b>OS:</b> > 50x (Required)</li>
+                            <li style="margin-bottom: 0.4rem;"><i data-lucide="check" style="width: 14px; color: #f59e0b;"></i> <b>Sector:</b> Data Centers / Solar</li>
+                        </ul>
+                        <div style="font-size: 0.75rem; background: rgba(0,0,0,0.2); padding: 0.75rem; border-radius: 0.5rem; border-left: 3px solid #f59e0b;">
+                            <strong style="color: #f59e0b;">Rule:</strong> Sell between 9:00 AM – 9:05 AM. Don't be greedy; the hype often fades by lunch.
+                        </div>
+                    </div>
+
+                    <!-- Grade C -->
+                    <div style="background: rgba(239, 68, 68, 0.05); padding: 1.5rem; border-radius: 1rem; border: 1px solid rgba(239, 68, 68, 0.2);">
+                        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
+                            <div style="display: flex; align-items: center; gap: 0.75rem;">
+                                <i data-lucide="alert-triangle" style="color: #ef4444; width: 24px;"></i>
+                                <h3 style="color: #ef4444; margin: 0;">Grade C</h3>
+                            </div>
+                            <span class="badge" style="background: rgba(239,68,68,0.2); color: #ef4444; border: 1px solid #ef4444;">AVOID</span>
+                        </div>
+                        <p style="font-size: 0.85rem; color: var(--text-dim); margin-bottom: 1rem; line-height: 1.5;">
+                            Low interest or high valuation. <b>Warning:</b> High risk of "Full Allocation" where you get 100% of requested shares.
+                        </p>
+                        <ul style="font-size: 0.8rem; color: var(--text-main); list-style: none; padding: 0; margin-bottom: 1rem;">
+                            <li style="margin-bottom: 0.4rem;"><i data-lucide="x" style="width: 14px; color: #ef4444;"></i> <b>OS:</b> < 10x</li>
+                            <li style="margin-bottom: 0.4rem;"><i data-lucide="x" style="width: 14px; color: #ef4444;"></i> <b>PE:</b> Overpriced (> 20x)</li>
+                        </ul>
+                        <div style="font-size: 0.75rem; background: rgba(0,0,0,0.2); padding: 0.75rem; border-radius: 0.5rem; border-left: 3px solid #ef4444;">
+                            <strong style="color: #ef4444;">Danger:</strong> If you get everything you applied for, sell immediately at the open.
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="automation-status glass-card" style="margin-bottom: 2rem; border-color: rgba(16, 185, 129, 0.3); background: linear-gradient(135deg, rgba(16, 185, 129, 0.05), transparent);">
+                <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem;">
+                    <div style="background: #10b981; padding: 0.75rem; border-radius: 0.75rem; color: white;">
+                        <i data-lucide="cpu" style="width: 24px;"></i>
+                    </div>
+                    <div>
+                        <h2 style="margin: 0;">Hunter <span>Automation Engine</span></h2>
+                        <p style="color: var(--text-dim); font-size: 0.9rem; margin: 0;">The following systems are currently running in the background:</p>
+                    </div>
+                    <button onclick="openSyncHub()" class="btn-moomoo" style="margin-left: auto; background: #10b981; border: none;">
+                        <i data-lucide="settings"></i> Manage Sync
+                    </button>
+                </div>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem;">
+                    <div style="padding: 1rem; border-left: 3px solid #10b981; background: rgba(255,255,255,0.02);">
+                        <strong style="color: #10b981; display: block; margin-bottom: 0.5rem;">📡 Live Scraper</strong>
+                        <p style="font-size: 0.8rem; color: var(--text-dim); margin: 0;">Syncs with Bursa & iSaham every 10 minutes to fetch latest prices and status changes.</p>
+                    </div>
+                    <div style="padding: 1rem; border-left: 3px solid #10b981; background: rgba(255,255,255,0.02);">
+                        <strong style="color: #10b981; display: block; margin-bottom: 0.5rem;">🎯 Deep Hunter</strong>
+                        <p style="font-size: 0.8rem; color: var(--text-dim); margin: 0;">AI agents probing for missing OS, Target Prices, and Broker reports automatically.</p>
+                    </div>
+                    <div style="padding: 1rem; border-left: 3px solid #10b981; background: rgba(255,255,255,0.02);">
+                        <strong style="color: #10b981; display: block; margin-bottom: 0.5rem;">⚡ Performance Sync</strong>
+                        <p style="font-size: 0.8rem; color: var(--text-dim); margin: 0;">Real-time calculation of Day 1 and Current performance for listed IPOs.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="broker-choice glass-card" style="margin-bottom: 4rem; border: 1px solid rgba(255, 255, 255, 0.1); background: rgba(255,255,255,0.02); padding: 2.5rem;">
+                <h2 style="text-align: center; margin-bottom: 2rem;">Hunter's <span>Preferred Brokers</span></h2>
+                
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+                    <!-- M+ Online Card -->
+                    <div style="background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), transparent); border: 1px solid rgba(99, 102, 241, 0.3); border-radius: 1.5rem; padding: 2rem; position: relative; overflow: hidden;">
+                        <div style="font-size: 0.7rem; color: #a5b4fc; text-transform: uppercase; font-weight: 800; margin-bottom: 0.5rem; letter-spacing: 0.1em;">Best for Financing</div>
+                        <h3 style="font-size: 1.5rem; margin-bottom: 1rem; color: white;">M+ Online</h3>
+                        <ul style="list-style: none; padding: 0; margin: 0 0 2rem 0; font-size: 0.9rem; color: var(--text-dim);">
+                            <li style="margin-bottom: 0.75rem;"><i data-lucide="check" style="width: 16px; color: #10b981; margin-right: 8px;"></i> 2x Leverage for IPOs</li>
+                            <li style="margin-bottom: 0.75rem;"><i data-lucide="check" style="width: 16px; color: #10b981; margin-right: 8px;"></i> Dedicated Financing Pool</li>
+                            <li style="margin-bottom: 0.75rem;"><i data-lucide="check" style="width: 16px; color: #10b981; margin-right: 8px;"></i> Established Local Broker</li>
+                        </ul>
+                        <div style="background: rgba(0,0,0,0.2); padding: 1rem; border-radius: 0.75rem; margin-bottom: 1.5rem; text-align: center; border: 1px dashed rgba(165, 180, 252, 0.3);">
+                            <span style="font-size: 0.65rem; color: #a5b4fc; display: block; margin-bottom: 0.25rem;">INVITE CODE</span>
+                            <span style="font-size: 1.25rem; font-weight: 800; color: white; letter-spacing: 0.1em;">DMEICG</span>
+                        </div>
+                        <a href="https://mplusonline.com/campaigns/newuser?lang=en-US&inviteCode=DMEICG&activityId=86&_scnl=1111738" target="_blank" class="btn-moomoo" style="display: block; text-align: center; padding: 1rem; text-decoration: none; border-radius: 0.75rem; font-weight: 700; background: linear-gradient(135deg, var(--primary), #4f46e5); color: white; border: 1px solid rgba(255,255,255,0.1);">Open M+ Account</a>
+                    </div>
+
+                    <!-- Moomoo Card -->
+                    <div style="background: linear-gradient(135deg, rgba(16, 185, 129, 0.1), transparent); border: 1px solid rgba(16, 185, 129, 0.3); border-radius: 1.5rem; padding: 2rem; position: relative; overflow: hidden;">
+                        <div style="font-size: 0.7rem; color: #10b981; text-transform: uppercase; font-weight: 800; margin-bottom: 0.5rem; letter-spacing: 0.1em;">Best for Platform</div>
+                        <h3 style="font-size: 1.5rem; margin-bottom: 1rem; color: white;">Moomoo MY</h3>
+                        <ul style="list-style: none; padding: 0; margin: 0 0 2rem 0; font-size: 0.9rem; color: var(--text-dim);">
+                            <li style="margin-bottom: 0.75rem;"><i data-lucide="check" style="width: 16px; color: #10b981; margin-right: 8px;"></i> Pro-Level Charting Tools</li>
+                            <li style="margin-bottom: 0.75rem;"><i data-lucide="check" style="width: 16px; color: #10b981; margin-right: 8px;"></i> Free Level 2 Market Data</li>
+                            <li style="margin-bottom: 0.75rem;"><i data-lucide="check" style="width: 16px; color: #10b981; margin-right: 8px;"></i> 0* Brokerage for 180 Days</li>
+                        </ul>
+                        <div style="background: rgba(0,0,0,0.2); padding: 1rem; border-radius: 0.75rem; margin-bottom: 1.5rem; text-align: center; border: 1px dashed rgba(16, 185, 129, 0.3);">
+                            <span style="font-size: 0.65rem; color: #10b981; display: block; margin-bottom: 0.25rem;">NEW USER REWARD</span>
+                            <span style="font-size: 1rem; font-weight: 700; color: white;">Free Shares/Cash Coupons</span>
+                        </div>
+                        <a href="https://www.moomoo.com/my/promotion/2511-referree?global_content=%7B%22promote_id%22%3A15066%2C%22invite%22%3A104903369%7D" target="_blank" class="btn-primary" style="display: block; text-align: center; padding: 1rem; text-decoration: none; border-radius: 0.75rem; font-weight: 700; background: #10b981;">Open Moomoo Account</a>
+                    </div>
+                </div>
+            </section>
+
+
+            <section class="market-guide glass-card">
+                <h2>Main Market vs <span>ACE Market</span></h2>
+                <p>Which one should you choose? Here is the simple difference:</p>
+                <div class="market-comparison">
+                    <div class="market-type main">
+                        <div class="market-header">
+                            <span class="badge main-market">MM</span>
+                            <h3>Main Market</h3>
+                        </div>
+                        <ul>
+                            <li><i data-lucide="check-circle"></i> Established, big companies</li>
+                            <li><i data-lucide="check-circle"></i> High profit track record required</li>
+                            <li><i data-lucide="shield-check"></i> Generally considered "safer" for beginners</li>
+                        </ul>
+                    </div>
+                    <div class="market-type ace">
+                        <div class="market-header">
+                            <span class="badge ace-market">ACE</span>
+                            <h3>ACE Market</h3>
+                        </div>
+                        <ul>
+                            <li><i data-lucide="zap"></i> Fast-growing, smaller companies</li>
+                            <li><i data-lucide="zap"></i> High growth potential</li>
+                            <li><i data-lucide="alert-triangle"></i> Higher risk, higher volatility</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="pro-tip">
+                    <i data-lucide="lightbulb"></i>
+                    <p><strong>Beginner Tip:</strong> Start with <strong>Main Market (MM)</strong> IPOs first as they
+                        are usually more stable!</p>
+                </div>
+            </section>
+
+            <section class="beginner-guide glass-card">
+                <h2>The 5-Step <span>IPO Journey</span></h2>
+                <p>New to IPOs? Here is how a company goes public in Malaysia:</p>
+
+                <div class="guide-grid">
+                    <div class="guide-item">
+                        <div class="guide-icon"><i data-lucide="file-search"></i></div>
+                        <h3>1. Draft Stage</h3>
+                        <p>The company shares its "plan" (Prospectus) with the authorities. No buying yet—this is for
+                            checking and feedback.</p>
+                    </div>
+                    <div class="guide-item">
+                        <div class="guide-icon"><i data-lucide="users"></i></div>
+                        <h3>2. MITI Stage</h3>
+                        <p>A "special invite" phase. Before everyone else, a portion is offered to Bumiputera investors
+                            through MITI.</p>
+                    </div>
+                    <div class="guide-item">
+                        <div class="guide-icon"><i data-lucide="shopping-cart"></i></div>
+                        <h3>3. Public Stage</h3>
+                        <p>Go time! Normal investors can apply for shares through their online bank (e-IPO).</p>
+                    </div>
+                    <div class="guide-item">
+                        <div class="guide-icon"><i data-lucide="clock"></i></div>
+                        <h3>4. Pre-Listing Stage</h3>
+                        <p>Balloting results are announced. The shares are credited to your CDS account if you win.</p>
+                    </div>
+                    <div class="guide-item">
+                        <div class="guide-icon"><i data-lucide="bar-chart-3"></i></div>
+                        <h3>5. Listed Stage</h3>
+                        <p>The finish line. The company starts trading on Bursa Malaysia, and the price starts moving!
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="financial-guide glass-card">
+                <h2>The <span>"Cheat Sheet"</span> to IPO Data</h2>
+                <p>Confused by all the numbers? Here is what you should focus on as a beginner:</p>
+                <div class="financial-grid">
+                    <div class="finance-item">
+                        <div class="finance-header">
+                            <i data-lucide="target"></i>
+                            <h3>Fair Value (FV)</h3>
+                        </div>
+                        <p><strong>The "Expert's Guess."</strong> Analysts calculate what the share is *actually* worth.
+                            If the <strong>FV is higher</strong> than the IPO price, it's considered "undervalued" (a
+                            good deal!).</p>
+                    </div>
+                    <div class="finance-item">
+                        <div class="finance-header">
+                            <i data-lucide="scale"></i>
+                            <h3>P/E Ratio</h3>
+                        </div>
+                        <p><strong>The "Price Tag."</strong> It tells you how much you are paying for every RM1 of
+                            profit. Usually, you want this to be <strong>lower</strong> than the sector average.</p>
+                    </div>
+                    <div class="finance-item">
+                        <div class="finance-header">
+                            <i data-lucide="users-2"></i>
+                            <h3>Oversubscription</h3>
+                        </div>
+                        <p><strong>The "Popularity Test."</strong> If it's 10x, it means 10 people want every 1 share.
+                            Higher usually means people are very confident.</p>
+                    </div>
+                    <div class="finance-item">
+                        <div class="finance-header">
+                            <i data-lucide="briefcase"></i>
+                            <h3>Market Cap</h3>
+                        </div>
+                        <p><strong>The "Size."</strong> Total value of the company. Big ones (Sunway) are safer; small
+                            ones (OGX) grow faster but are riskier.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="hunter-checklist glass-card">
+                <div class="checklist-info">
+                    <h2>Hunter's <span>Checklist</span></h2>
+                    <p>Before you can buy any IPO, you MUST have these two things ready:</p>
+                </div>
+                <div class="checklist-grid">
+                    <div class="check-item">
+                        <i data-lucide="contact"></i>
+                        <div class="check-text">
+                            <h3>1. CDS Account</h3>
+                            <p>An account to hold your shares. You can open one via the <strong>Bursa Anywhere</strong>
+                                app or your broker.</p>
+                        </div>
+                    </div>
+                    <div class="check-item">
+                        <i data-lucide="banknote"></i>
+                        <div class="check-text">
+                            <h3>2. e-Banking Account</h3>
+                            <p>Most Malaysian banks (Maybank, CIMB, Public Bank, etc.) allow you to apply for IPOs via
+                                their "e-IPO" menu.</p>
+                        </div>
+                    </div>
+                </div>
+        <!-- Legend & Education -->
+    </main>
+
+    <footer class="glass-footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2026 IPO Hunter Dashboard. Multi-Broker Support Active.</p>
+                <div style="display: flex; gap: 1rem; justify-content: center; margin-top: 0.5rem;">
+                    <a href="https://mplusonline.com/campaigns/newuser?lang=en-US&inviteCode=DMEICG&activityId=86&_scnl=1111738" target="_blank" style="color: var(--primary-light); text-decoration: none; font-size: 0.85rem;">M+ Sign Up →</a>
+                    <span style="color: rgba(255,255,255,0.2);">|</span>
+                    <a href="https://www.moomoo.com/my/promotion/2511-referree?global_content=%7B%22promote_id%22%3A15066%2C%22invite%22%3A104903369%7D" target="_blank" style="color: #10b981; text-decoration: none; font-size: 0.85rem;">Moomoo Sign Up →</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div id="ipo-modal" class="modal-backdrop" style="display: none;">
+        <div class="modal-content glass-card">
+            <button id="close-modal" class="btn-close"><i data-lucide="x"></i></button>
+            <div id="modal-body">
+                <!-- Content injected via JS -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="back-to-top" title="Back to Top">
+        <i data-lucide="chevron-up"></i>
+    </button>
+
+    <!-- Mobile Floating Broker Hub -->
+    <div style="position: fixed; bottom: 20px; left: 20px; display: flex; flex-direction: column; gap: 10px; z-index: 1000;">
+        <a href="https://mplusonline.com/campaigns/newuser?lang=en-US&inviteCode=DMEICG&activityId=86&_scnl=1111738" target="_blank" class="mobile-moomoo-fab" style="position: static; background: linear-gradient(135deg, var(--primary), #4f46e5); width: 45px; height: 45px; border-radius: 12px;">
+            <i data-lucide="shield-check" style="width: 20px;"></i>
+        </a>
+        <a href="https://www.moomoo.com/my/promotion/2511-referree?global_content=%7B%22promote_id%22%3A15066%2C%22invite%22%3A104903369%7D" target="_blank" class="mobile-moomoo-fab" style="position: static; background: #10b981; width: 45px; height: 45px; border-radius: 12px;">
+            <i data-lucide="trending-up" style="width: 20px;"></i>
+        </a>
+    </div>
+
+    <div id="calculator-modal" class="modal-backdrop" style="display: none;">
+        <div class="modal-content glass-card" style="max-width: 800px; width: 95%;">
+            <button class="btn-close" onclick="closeCalculatorModal()"><i data-lucide="x"></i></button>
+            <div id="modal-body">
+                <div style="text-align: center; margin-bottom: 2rem;">
+                    <div style="display: flex; align-items: center; justify-content: center; gap: 0.75rem; margin-bottom: 0.5rem;">
+                        <i data-lucide="crown" style="color: #f59e0b; width: 24px;"></i>
+                        <h2 style="margin: 0;">Hunter Pro <span style="color: var(--primary);">Tier & Financing Hub</span></h2>
+                    </div>
+                    <p style="color: var(--text-dim);">Automated capital allocation & leverage strategy</p>
+                </div>
+
+                <div class="pro-calc-grid">
+                    <!-- Left: Inputs -->
+                    <div class="pro-calc-inputs">
+                        <div class="calc-form-group">
+                            <label><i data-lucide="target" style="width: 14px;"></i> Select IPO</label>
+                            <select id="calc-ipo-select" onchange="syncHunterProCalculator()">
+                                <option value="">-- Select IPO --</option>
+                            </select>
+                        </div>
+                        <div class="calc-form-group">
+                            <label><i data-lucide="wallet" style="width: 14px;"></i> Available Capital (RM)</label>
+                            <input type="number" id="calc-capital" value="10000" placeholder="e.g. 10000" oninput="syncHunterProCalculator()">
+                        </div>
+                        <div class="calc-form-group">
+                            <label><i data-lucide="users" style="width: 14px;"></i> Num of CDS Accounts</label>
+                            <select id="calc-cds-num" onchange="syncHunterProCalculator()">
+                                <option value="1">1 Account</option>
+                                <option value="2">2 Accounts (Max)</option>
+                            </select>
+                        </div>
+                        <div class="calc-form-group">
+                            <label><i data-lucide="zap" style="width: 14px;"></i> Leverage</label>
+                            <select id="calc-leverage" onchange="syncHunterProCalculator()">
+                                <option value="1">1x (Cash Only)</option>
+                                <option value="2" selected>2x (M+ Financing)</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Right: Results Summary -->
+                    <div class="pro-calc-results">
+                        <div id="calc-summary-card" class="glass-card result-summary-card">
+                            <div class="summary-label">Total Subscription Power</div>
+                            <div id="res-total-power" class="summary-value">RM 0.00</div>
+                            <div class="summary-sub">
+                                <span id="res-principal">Cash: RM 0</span> + <span id="res-loan">Loan: RM 0</span>
+                            </div>
+                        </div>
+
+                        <div class="tier-recommendation">
+                            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                                <span style="font-weight: 600; color: #a5b4fc;">Optimal Tier</span>
+                                <span id="res-tier-badge" class="badge" style="background: var(--primary); color: white; border: none;">Tier -</span>
+                            </div>
+                            <div id="res-recommended-units" style="font-size: 1.25rem; font-weight: 800; color: white;">0 units</div>
+                            <div id="res-recommended-cost" style="font-size: 0.8rem; color: var(--text-dim);">Cost: RM 0.00</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pro-tabs" style="margin-top: 2rem;">
+                    <div class="pro-tab-headers">
+                        <button class="pro-tab-btn active" onclick="switchProTab('financing')">Financing Details</button>
+                        <button class="pro-tab-btn" onclick="switchProTab('tiers')">Tier Table</button>
+                        <button class="pro-tab-btn" onclick="switchProTab('sell')">Sell Calculator</button>
+                    </div>
+
+                    <div id="pro-tab-financing" class="pro-tab-content active">
+                        <div class="detail-grid">
+                            <div class="detail-item">
+                                <span class="label">Financing Profit (Interest)</span>
+                                <span id="res-interest" class="value">RM 0.00</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="label">SST (8%)</span>
+                                <span id="res-sst" class="value">RM 0.00</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="label">Total Financing Costs</span>
+                                <span id="res-total-cost" class="value" style="color: #ef4444;">RM 0.00</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="label">Days to Holding</span>
+                                <span id="res-days" class="value">0 days</span>
+                            </div>
+                        </div>
+                        <div id="res-additional-deposit" class="deposit-alert" style="display: none;">
+                            <i data-lucide="info" style="width: 14px;"></i>
+                            Additional Cash Deposit Required: <strong id="res-deposit-val">RM 0.00</strong>
+                        </div>
+                    </div>
+
+                    <div id="pro-tab-tiers" class="pro-tab-content">
+                        <div class="table-responsive" style="max-height: 300px; overflow-y: auto;">
+                            <table class="tier-table">
+                                <thead>
+                                    <tr>
+                                        <th>Units</th>
+                                        <th>Tier</th>
+                                        <th>Cost (RM)</th>
+                                        <th>Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="tier-table-body">
+                                    <!-- Injected via JS -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div id="pro-tab-sell" class="pro-tab-content">
+                        <div class="sell-calc-grid">
+                            <div class="calc-form-group">
+                                <label>Target Sell Price (RM)</label>
+                                <input type="number" id="calc-sell-price" step="0.01" oninput="syncHunterProCalculator()">
+                            </div>
+                            <div class="sell-results">
+                                <div class="sell-stat">
+                                    <span class="label">Net Profit (After Fees)</span>
+                                    <span id="res-net-profit" class="value" style="font-size: 1.5rem;">RM 0.00</span>
+                                </div>
+                                <div class="sell-stat">
+                                    <span class="label">ROI %</span>
+                                    <span id="res-roi" class="value" style="font-size: 1.5rem;">0.00%</span>
+                                </div>
+                            </div>
+                        </div>
+                        <p style="font-size: 0.7rem; color: var(--text-dim); margin-top: 1rem; font-style: italic;">
+                            *Using M+ Online cash upfront rate (0.08% or min RM8) for brokerage calculation.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hunter AI Assistant -->
+    <div id="ai-chat-container" class="ai-chat-container">
+        <div class="ai-chat-window glass-card" id="ai-window" style="display: none;">
+            <div class="ai-chat-header">
+                <div class="ai-info">
+                    <div class="ai-avatar">
+                        <i data-lucide="bot"></i>
+                        <span class="online-indicator"></span>
+                    </div>
+                    <div>
+                        <h3 style="margin: 0; font-size: 1.1rem;">Hunter AI</h3>
+                        <p style="margin: 0; font-size: 0.75rem; color: var(--text-dim);">Ask me about Malaysian IPOs</p>
+                    </div>
+                </div>
+                <button onclick="toggleChat()" class="btn-close-chat" style="background: none; border: none; color: var(--text-dim); cursor: pointer;"><i data-lucide="x"></i></button>
+            </div>
+            <div id="ai-messages" class="ai-messages">
+                <div class="message ai-message">
+                    Hello! I'm your IPO Hunter Assistant. 🎯<br><br>
+                    I can help you understand the grading system, check the status of specific IPOs, or explain strategy. How can I help you today?
+                </div>
+            </div>
+            <div class="ai-chat-input">
+                <input type="text" id="ai-input" placeholder="Type your question..." onkeypress="if(event.key === 'Enter') sendAIMessage()">
+                <button onclick="sendAIMessage()" id="ai-send-btn"><i data-lucide="send"></i></button>
+            </div>
+        </div>
+        <button id="ai-chat-toggle" class="ai-chat-toggle pulse-primary" onclick="toggleChat()">
+            <i data-lucide="message-circle" id="toggle-icon-open"></i>
+            <i data-lucide="x" id="toggle-icon-close" style="display: none;"></i>
+            <span class="notification-badge">1</span>
+        </button>
+    </div>
+
+    <script src="main.js?v=1.1"></script>
+    <script>
+        lucide.createIcons();
+        initializeData();
+    </script>
+</body>
+
+</html>

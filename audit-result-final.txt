@@ -1,0 +1,37 @@
+﻿Sunway Healthcare Holdings Berhad   | G:A | Open:17.2% | OS:5.58 | Hold:63.4% 
+SEMICO Berhad                       | G:B | Open:80.0% | OS:28.9 | Hold:106.0% 
+GHS Group Berhad                    | G:C | Open:-4.0% | OS:4.8 | Hold:-24.0% 
+Kee Ming Group Berhad               | G:B | Open:107.9% | OS:54.16 | Hold:102.6% 
+Oriental Kopi Holdings              | G:A | Open:47.7% | OS:26.35 | Hold:140.9% 
+99 Speed Mart Retail                | G:A | Open:12.1% | OS:3.04 | Hold:110.9% 
+Master Tec Group Berhad             | G:C | Open:0.0% | OS:7.11 | Hold:174.4% ISSUE: C+huge gains
+Johor Plantations Group             | G:A | Open:19.0% | OS:3.54 | Hold:104.8% 
+Feytech Holdings                    | G:C | Open:37.5% | OS:15.64 | Hold:-72.5% ISSUE: C+strong>30%
+Alpha IVF Group                     | G:C | Open:0.0% | OS:1.73 | Hold:-15.6% 
+Northern Solar Holdings             | G:B | Open:100.0% | OS:73.2 | Hold:20.0% 
+Supreme Consolidated                | G:B | Open:60.0% | OS:- | Hold:20.0% 
+Kucingko Berhad                     | G:B | Open:83.3% | OS:99.02 | Hold:-73.3% 
+Prolintas Infra Business Trust      | G:C | Open:0.0% | OS:3.59 | Hold:1.1% 
+Keyfield International Berhad       | G:A | Open:88.9% | OS:9.69 | Hold:55.6% 
+MKH Oil Palm (East Kalimantan)      | G:B | Open:1.6% | OS:8.43 | Hold:-3.2% 
+Mega Fortris Berhad                 | G:C | Open:-1.5% | OS:1.05 | Hold:14.9% 
+Azam Jaya Berhad                    | G:A | Open:39.7% | OS:23 | Hold:33.3% 
+Pantech Global Berhad               | G:A | Open:11.8% | OS:- | Hold:-23.5% ISSUE: A lost>20%
+Wawasan Dengkil Holdings            | G:A | Open:9.1% | OS:56 | Hold:12.7% 
+Saliran Group Berhad                | G:A | Open:11.1% | OS:76.03 | Hold:-53.3% ISSUE: A lost>20%
+Adnex Group Berhad                  | G:B | Open:25.0% | OS:3.23 | Hold:20.0% 
+OGX Group Berhad                    | G:C | Open:-20.0% | OS:10.11 | Hold:-2.9% 
+Teamstar Berhad                     | G:C | Open:3.8% | OS:4.2 | Hold:-5.8% 
+Hock Soon Capital Berhad            | G:C | Open:-11.7% | OS:1.36 | Hold:-36.7% 
+Ambest Group Berhad                 | G:B | Open:16.0% | OS:46.07 | Hold:20.0% 
+ISF Group Berhad                    | G:B | Open:51.5% | OS:31.14 | Hold:16.7% 
+One Gasmaster Holdings Berhad       | G:B | Open:12.0% | OS:25.24 | Hold:12.0% 
+SBS Nexus Berhad                    | G:B | Open:0.0% | OS:22.3 | Hold:-4.0% 
+Kawan Renergy Berhad                | G:B | Open:50.0% | OS:94.99 | Hold:73.3% 
+UUE Holdings Berhad                 | G:B | Open:175.0% | OS:103.83 | Hold:254.2% 
+Ocean Fresh Berhad                  | G:B | Open:114.3% | OS:76.22 | Hold:107.1% 
+Farm Price Berhad                   | G:B | Open:100.0% | OS:91.35 | Hold:87.5% 
+Steel Hawk Berhad                   | G:B | Open:100.0% | OS:276.83 | Hold:133.3% 
+Wentel Engineering                  | G:C | Open:0.0% | OS:17.75 | Hold:-7.7% 
+Zantat Holdings                     | G:B | Open:60.0% | OS:129.99 | Hold:40.0% 
+Mini-Mart Express                   | G:C | Open:-10.0% | OS:5 | Hold:-24.0% 

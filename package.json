@@ -1,0 +1,25 @@
+{
+  "name": "ipohunter",
+  "version": "1.0.0",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zawawimanja/ipohunter.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zawawimanja/ipohunter/issues"
+  },
+  "homepage": "https://github.com/zawawimanja/ipohunter#readme",
+  "description": "",
+  "dependencies": {
+    "@vercel/analytics": "^2.0.1",
+    "axios": "^1.16.0",
+    "cheerio": "^1.2.0"
+  }
+}

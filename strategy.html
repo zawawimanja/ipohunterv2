@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1200">
+    <title>IPO Strategy & Projections | IPO Hunter</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-dark: #0f172a;
+            --glass-bg: rgba(30, 41, 59, 0.7);
+            --accent-primary: #38bdf8;
+            --accent-secondary: #818cf8;
+            --grade-a: #10b981;
+            --grade-b: #f59e0b;
+            --grade-c: #ef4444;
+            --text-light: #f8fafc;
+        }
+
+        body {
+            background: radial-gradient(circle at top right, #1e293b, #0f172a);
+            color: var(--text-light);
+            font-family: 'Outfit', sans-serif;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+        }
+
+        .page-wrapper {
+            position: relative;
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .header h1 {
+            font-size: 3rem;
+            background: linear-gradient(to right, var(--accent-primary), var(--accent-secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            color: #94a3b8;
+            font-size: 1.2rem;
+        }
+
+        .card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 24px;
+            padding: 30px;
+            margin-bottom: 40px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+        }
+
+        .section-title {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 30px;
+            font-size: 1.5rem;
+            color: var(--accent-primary);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+
+        th {
+            text-align: left;
+            padding: 15px;
+            color: #94a3b8;
+            font-weight: 400;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        td {
+            padding: 15px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        .grade-pill {
+            padding: 4px 12px;
+            border-radius: 10px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .grade-a { color: var(--grade-a); }
+        .grade-b { color: var(--grade-b); }
+        .grade-c { color: var(--grade-c); }
+
+        .total-row {
+            background: rgba(255, 255, 255, 0.05);
+            font-weight: 700;
+        }
+
+        .total-row td {
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
+
+        .projection-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .projection-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 25px;
+            transition: all 0.3s ease;
+        }
+
+        .projection-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.05);
+            border-color: var(--accent-primary);
+        }
+
+        .projection-card.highlight {
+            background: linear-gradient(135deg, rgba(56, 189, 248, 0.1), rgba(129, 140, 248, 0.1));
+            border: 1px solid var(--accent-primary);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .projection-card.highlight::after {
+            content: "🔥";
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 1.5rem;
+        }
+
+        .proj-label {
+            color: #94a3b8;
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .proj-amount {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+
+        .proj-stats {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .stat-item span {
+            display: block;
+            font-size: 0.8rem;
+            color: #94a3b8;
+        }
+
+        .stat-item b {
+            font-size: 1.1rem;
+        }
+
+        .nav-link {
+            position: absolute;
+            top: 30px;
+            left: 30px;
+            color: var(--accent-primary);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 600;
+        }
+
+        .rules-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .rule-item {
+            display: flex;
+            gap: 15px;
+            align-items: flex-start;
+        }
+
+        .rule-icon {
+            width: 40px;
+            height: 40px;
+            background: rgba(56, 189, 248, 0.1);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--accent-primary);
+            flex-shrink: 0;
+        }
+
+        .rule-text h4 {
+            margin: 0 0 5px 0;
+            font-size: 1rem;
+        }
+
+        .rule-text p {
+            margin: 0;
+            font-size: 0.9rem;
+            color: #94a3b8;
+        }
+
+        /* ============ PRO-TIP ============ */
+        .pro-tip {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            background: rgba(56, 189, 248, 0.06);
+            border: 1px solid rgba(56, 189, 248, 0.3);
+            border-radius: 14px;
+            padding: 16px 20px;
+        }
+        .pro-tip i { color: var(--accent-primary); margin-top: 3px; flex-shrink: 0; }
+        .pro-tip p { margin: 0; font-size: 0.9rem; color: #cbd5e1; line-height: 1.6; }
+    </style>
+</head>
+<body>
+    <a href="index.html" class="nav-link">
+        <i class="fas fa-arrow-left"></i> Back to Dashboard
+    </a>
+
+    <div class="container">
+        <div class="header">
+            <h1>IPO Strategy & Projections</h1>
+            <p>Historical Backtest (2019-2026) • Recycled Capital Strategy</p>
+        </div>
+
+        <div class="card">
+            <div class="section-title">
+                <i class="fas fa-chart-line"></i>
+                Accumulated Day 1 Performance
+            </div>
+            <div style="overflow-x: auto;">
+                <table id="backtestTable">
+                    <thead>
+                        <tr>
+                            <th>Year</th>
+                            <th class="grade-a">Grade A</th>
+                            <th class="grade-b">Grade B</th>
+                            <th class="grade-c">Grade C</th>
+                        </tr>
+                    </thead>
+                    <tbody id="backtestBody">
+                        <!-- Filled by JS -->
+                    </tbody>
+                    <tfoot>
+                        <tr class="total-row" id="totalRow">
+                            <!-- Filled by JS -->
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="section-title">
+                <i class="fas fa-door-open"></i>
+                Optimized Exit Strategies
+            </div>
+            <div class="rules-grid">
+                <div class="projection-card" style="border-left: 5px solid var(--grade-b);">
+                    <div class="proj-label" style="color: var(--grade-b);">Grade B: The 5-Minute Scalp</div>
+                    <div class="proj-amount" style="font-size: 1.4rem;">9:00 AM – 9:05 AM Window</div>
+                    <p style="font-size: 0.9rem; color: #94a3b8; margin: 10px 0;">
+                        <b>Pro Tip:</b> Don't sell instantly. Peak hype often occurs in the first 5 minutes. If momentum is strong (OS > 50x), wait for the first 5-min candle to finish.
+                    </p>
+                    <div class="proj-stats" style="margin-top: 10px; padding-top: 10px;">
+                        <div class="stat-item"><span>Total Open</span><b>+7,878%</b></div>
+                        <div class="stat-item"><span>Total Close</span><b>+6,761%</b></div>
+                    </div>
+                </div>
+                <div class="projection-card" style="border-left: 5px solid var(--grade-a);">
+                    <div class="proj-label" style="color: var(--grade-a);">Grade A: The Institutional Wave</div>
+                    <div class="proj-amount" style="font-size: 1.4rem;">Hold Until 5:00 PM Close</div>
+                    <p style="font-size: 0.9rem; color: #94a3b8; margin: 10px 0;">
+                        Institutions buy throughout the day. Holding until close adds an extra <b>+59.7%</b> in total returns.
+                    </p>
+                    <div class="proj-stats" style="margin-top: 10px; padding-top: 10px;">
+                        <div class="stat-item"><span>Total Open</span><b>+592%</b></div>
+                        <div class="stat-item"><span>Total Close</span><b>+652%</b></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card" style="background: linear-gradient(135deg, rgba(15, 23, 42, 0.9), rgba(30, 41, 59, 0.8)); border: 1px solid var(--accent-primary);">
+            <div class="section-title">
+                <i class="fas fa-rocket"></i>
+                The Compounding Superpower (RM 10k Start)
+            </div>
+            <p style="color: #94a3b8; margin-bottom: 25px; font-size: 0.95rem;">
+                Comparison assuming a <b>5% average allocation</b> (Realistic) and <b>Grade B focus</b>.
+            </p>
+            <div style="overflow-x: auto;">
+                <table style="text-align: center;">
+                    <thead>
+                        <tr>
+                            <th>Timeline</th>
+                            <th>Fixed (RM 10k)</th>
+                            <th>Compounded (Cash)</th>
+                            <th style="color: #facc15;"><i class="fas fa-bolt"></i> Hunter Pro (2x Leverage)</th>
+                            <th>Difference</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Year 1</td>
+                            <td>RM 15,624</td>
+                            <td>RM 17,400</td>
+                            <td style="color: #facc15; font-weight: 700;">RM 24,800</td>
+                            <td style="color: var(--grade-a);">+RM 9,176</td>
+                        </tr>
+                        <tr>
+                            <td>Year 3</td>
+                            <td>RM 26,872</td>
+                            <td>RM 52,600</td>
+                            <td style="color: #facc15; font-weight: 700;">RM 158,000</td>
+                            <td style="color: var(--grade-a);">+RM 105,328</td>
+                        </tr>
+                        <tr>
+                            <td>Year 5</td>
+                            <td>RM 38,120</td>
+                            <td>RM 159,000</td>
+                            <td style="color: #facc15; font-weight: 700;">RM 720,000</td>
+                            <td style="color: var(--grade-a);">+RM 561,000</td>
+                        </tr>
+                        <tr class="total-row" style="background: rgba(250, 204, 21, 0.1);">
+                            <td>Year 7</td>
+                            <td>RM 49,368</td>
+                            <td>RM 481,000</td>
+                            <td style="color: #facc15; font-size: 1.4rem;">RM 2,420,000</td>
+                            <td style="color: var(--grade-a); font-size: 1.2rem;">+RM 1,939,000</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="pro-tip" style="margin-top: 25px; border-color: #facc15; background: rgba(250, 204, 21, 0.05);">
+                <i class="fas fa-bolt" style="color: #facc15;"></i>
+                <p><b>Leverage is a Speed Multiplier:</b> By using 2x financing (M+), you double your share allocation per IPO. This accelerates compounding exponentially. In 7 years, the difference between Cash and Leverage is a staggering <b>RM 1.9 Million</b>.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="section-title">
+                <i class="fas fa-bullseye"></i>
+                Wealth Projections (Grade B Focus)
+            </div>
+            <div class="projection-grid" id="projectionGrid">
+                <!-- Filled by JS -->
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="section-title">
+                <i class="fas fa-shield-alt"></i>
+                Core Strategy Rules
+            </div>
+            <div class="rules-grid">
+                <div class="rule-item">
+                    <div class="rule-icon"><i class="fas fa-recycle"></i></div>
+                    <div class="rule-text">
+                        <h4>Recycle Capital</h4>
+                        <p>Capital is returned after listing. You only need the "Apply per IPO" amount in your account.</p>
+                    </div>
+                </div>
+                <div class="rule-item">
+                    <div class="rule-icon"><i class="fas fa-ban"></i></div>
+                    <div class="rule-text">
+                        <h4>Skip Grade C</h4>
+                        <p>Historical data shows Grade C destroys capital (-237%). Never apply for C-rated IPOs.</p>
+                    </div>
+                </div>
+                <div class="rule-item">
+                    <div class="rule-icon"><i class="fas fa-bolt"></i></div>
+                    <div class="rule-text">
+                        <h4>Day 1 Scalp</h4>
+                        <p>Sell Grade B at the opening bell. This captures the maximum hype and premium.</p>
+                    </div>
+                </div>
+                <div class="rule-item">
+                    <div class="rule-icon"><i class="fas fa-gem"></i></div>
+                    <div class="rule-text">
+                        <h4>Focus on B</h4>
+                        <p>Grade B represents 70%+ of total market returns. It is the real money machine.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div><!-- /.container -->
+
+    <script src="strategy-data.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            if (typeof STRATEGY_DATA === 'undefined') {
+                console.error('STRATEGY_DATA not found. Please ensure strategy-data.js is loaded correctly.');
+                document.body.innerHTML += '<div style="color:red; padding:20px; text-align:center;">Error: Strategy data not loaded.</div>';
+                return;
+            }
+
+            const backtestBody = document.getElementById('backtestBody');
+            const totalRow = document.getElementById('totalRow');
+            const projectionGrid = document.getElementById('projectionGrid');
+
+            if (!backtestBody || !totalRow || !projectionGrid) {
+                console.error('Required DOM elements not found.');
+                return;
+            }
+
+            // Render Backtest Table
+            STRATEGY_DATA.backtest.forEach(row => {
+                const tr = document.createElement('tr');
+                tr.innerHTML = `
+                    <td>${row.year}</td>
+                    <td class="grade-a">${row.a}</td>
+                    <td class="grade-b">${row.b}</td>
+                    <td class="grade-c">${row.c}</td>
+                `;
+                backtestBody.appendChild(tr);
+            });
+
+            // Render Total Row
+            totalRow.innerHTML = `
+                <td>GRAND TOTAL</td>
+                <td class="grade-a">${STRATEGY_DATA.totals.a}</td>
+                <td class="grade-b">${STRATEGY_DATA.totals.b}</td>
+                <td class="grade-c">${STRATEGY_DATA.totals.c}</td>
+            `;
+
+            // Render Projections
+            STRATEGY_DATA.projections.forEach(proj => {
+                const total7 = proj.amt * STRATEGY_DATA.multiplier;
+                const perYear = total7 / 7;
+                const perMonth = perYear / 12;
+
+                const card = document.createElement('div');
+                card.className = `projection-card ${proj.highlight ? 'highlight' : ''}`;
+                card.innerHTML = `
+                    <div class="proj-label">${proj.label}</div>
+                    <div class="proj-amount">RM ${proj.amt.toLocaleString()} <span style="font-size:0.8rem; font-weight:400; color:#94a3b8;">per IPO</span></div>
+                    <div class="proj-stats">
+                        <div class="stat-item">
+                            <span>7 Year Total</span>
+                            <b>RM ${Math.round(total7).toLocaleString()}</b>
+                        </div>
+                        <div class="stat-item">
+                            <span>Avg Income</span>
+                            <b>RM ${Math.round(perMonth).toLocaleString()}/mo</b>
+                        </div>
+                    </div>
+                `;
+                projectionGrid.appendChild(card);
+            });
+        });
+    </script>
+</body>
+</html>
