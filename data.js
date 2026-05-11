@@ -161,7 +161,7 @@ const IPO_DATA = [
   {
     "id": "stratus-global",
     "companyName": "Stratus Global Holdings Berhad",
-    "sector": "Technology (Automation)",
+    "sector": "Factory Automation / Cleanroom Handling",
     "stage": 2,
     "price": 0.75,
     "market": "Main Market",
@@ -5352,20 +5352,7 @@ const IPO_DATA = [
     "analystInsight": "HISTORICAL OUTLIER: Massive performance pop that defied standard grading.",
     "highPrice": 5.600499999999999
   },
-  {
-    "id": "stratus-global",
-    "companyName": "Stratus Global Holdings Berhad",
-    "market": "Main Market",
-    "stage": 2,
-    "status": "MITI Allocation Phase",
-    "year": 2026,
-    "shariah": true,
-    "os": 0,
-    "ib": "UOB Kay Hian",
-    "sector": "Factory Automation / Cleanroom Handling",
-    "fundUse": "Expansion & R&D",
-    "price": 0.0
-  }
+
 ];
 
 if (typeof module !== 'undefined') { module.exports = IPO_DATA; }
