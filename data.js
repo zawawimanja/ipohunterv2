@@ -217,7 +217,8 @@ const IPO_DATA = [
     "predictedGrade": "B",
     "pe": 14.5,
     "avgTP": 0.61,
-    "analystInsight": "UPCOMING: M&A Securities play in the trending Industrial/Energy sector. High demand expected with 70-100x+ OS potential.",
+    "predictedGrade": "B",
+    "analystInsight": "🚀 Exceptional Demand (85x)<br>⚡ M&A Securities (Momentum IB)<br>📈 Expansion Fund Use",
     "research": [
       {
         "house": "TA Securities",
@@ -685,8 +686,9 @@ const IPO_DATA = [
     "estOpen": 1.55,
     "ib": "Maybank / CIMB",
     "fundUse": "60% R&D (IC Products & Silicon IP), 40% Infrastructure & EDA tools.",
+    "predictedGrade": "A",
     "avgTP": 1.58,
-    "analystInsight": "CRAZY DEMAND: Moomoo Target Price surged to RM1.58 (+79.55%) just hours before closing. With no MITI tranche and reported full subscription across brokers, this is shaping up to be the hottest tech play of 2026. Expect extreme OS and massive listing day volatility.",
+    "analystInsight": "<b>Pre-OS Grade A (Score: 100/100)</b><br>⏳ Waiting for OS data.",
     "research": [
       {
         "house": "BIMB Securities",

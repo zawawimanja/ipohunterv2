@@ -599,7 +599,16 @@ function updateTabCounts() {
 function getIpoGrade(ipo) {
     if (!ipo.market || ipo.market === 'Unknown') return { grade: 'Unrated', reason: 'Market classification unknown.' };
     const os = ipo.os || 0;
-    const hasOsData = ipo.os !== undefined && ipo.os !== null; 
+    const hasOsData = ipo.os !== undefined && ipo.os !== null && ipo.os > 0; 
+    
+    // PRIORITY 1: Respect manual Predicted Grade from data.js if it exists
+    if (ipo.predictedGrade && ipo.stage < 5) {
+        return { 
+            grade: ipo.predictedGrade, 
+            reason: ipo.analystInsight || 'Manual rating applied.' 
+        };
+    }
+
     const perf = ipo.performance || '';
     const ib = (ipo.ib || '').toLowerCase();
     const pe = ipo.pe || 0;

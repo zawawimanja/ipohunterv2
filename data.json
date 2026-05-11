@@ -217,7 +217,8 @@
         "predictedGrade": "B",
         "pe": 14.5,
         "avgTP": 0.61,
-        "analystInsight": "UPCOMING: M&A Securities play in the trending Industrial/Energy sector. High demand expected with 70-100x+ OS potential.",
+        "predictedGrade": "B",
+        "analystInsight": "🚀 Exceptional Demand (85x)<br>⚡ M&A Securities (Momentum IB)<br>📈 Expansion Fund Use",
         "research": [
             {
                 "house": "TA Securities",
@@ -677,11 +678,11 @@
         "year": 2026,
         "shariah": true,
         "predictedOS": "60-110x",
-        "estOpen": 1.40,
         "ib": "Maybank / CIMB",
         "fundUse": "60% R&D (IC Products & Silicon IP), 40% Infrastructure & EDA tools.",
-        "avgTP": 1.2,
-        "analystInsight": "SCARCITY ALERT: No MITI Private Placement tranche. This creates a bottleneck in the Retail portion, similar to Oppstar (+285%) and TT Vision (+270%). High probability of a massive Day 1 pop due to concentrated demand and AI hype.",
+        "predictedGrade": "A",
+        "avgTP": 1.58,
+        "analystInsight": "<b>Pre-OS Grade A (Score: 100/100)</b><br>⏳ Waiting for OS data.",
         "research": [
             {
                 "house": "BIMB Securities",
