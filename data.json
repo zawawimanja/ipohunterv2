@@ -192,7 +192,9 @@
         "shariah": true,
         "os": 0,
         "ib": "UOB Kay Hian",
-        "fundUse": "Expansion & R&D"
+        "fundUse": "Expansion & R&D",
+        "predictedGrade": "B",
+        "analystInsight": "HIGH CONVICTION: Semiconductor automation is a top-tier sector. Unlike Inspace, this is a global tech play on the Main Market. High institutional interest expected."
     },
     {
         "id": "ei-power",
@@ -364,7 +366,9 @@
         "shariah": true,
         "os": 0,
         "ib": "TBA",
-        "fundUse": "Working Capital & Development"
+        "fundUse": "Working Capital & Development",
+        "predictedGrade": "C",
+        "analystInsight": "AVOID: Property sector is currently cold with low retail interest. High risk of 'Inspace' performance. Not worth the capital lock-up."
     },
     {
         "id": "golden-destinations",
