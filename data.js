@@ -15,9 +15,9 @@ const IPO_DATA = [
     "os": 0,
     "ib": "TA Securities",
     "fundUse": "Construction of new production facility & procurement of machines",
-    "predictedGrade": "B",
+    "predictedGrade": "C",
     "avgTP": 0.28,
-    "analystInsight": "NEW: TA Securities ACE play. Focus on production capacity expansion with decent upside potential."
+    "analystInsight": "AVOID: Potential 'Inspace' trap. Low trust in current ACE sentiment. Strategy: Avoid unless OS exceeds 100x."
   },
   {
     "id": "5e-resources",
