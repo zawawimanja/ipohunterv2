@@ -688,7 +688,7 @@ const IPO_DATA = [
     "fundUse": "60% R&D (IC Products & Silicon IP), 40% Infrastructure & EDA tools.",
     "predictedGrade": "A",
     "avgTP": 1.58,
-    "analystInsight": "<b>Pre-OS Grade A (Score: 100/100)</b><br>⏳ Waiting for OS data.",
+    "analystInsight": "🌟 <b>REMAINS A (MUST BUY)</b><br><b>Pre-OS Grade A (Score: 100/100)</b><br>⏳ Waiting for OS data.",
     "research": [
       {
         "house": "BIMB Securities",
