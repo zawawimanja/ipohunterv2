@@ -17,7 +17,7 @@ const IPO_DATA = [
     "fundUse": "Construction of new production facility & procurement of machines",
     "predictedGrade": "C",
     "avgTP": 0.28,
-    "analystInsight": "AVOID: Potential 'Inspace' trap. Low trust in current ACE sentiment. Strategy: Avoid unless OS exceeds 100x."
+    "analystInsight": "⚠️ <b>AVOID</b><br>Potential 'Inspace' trap. Low trust in current ACE sentiment. Strategy: Avoid unless OS exceeds 100x."
   },
   {
     "id": "5e-resources",
@@ -95,7 +95,9 @@ const IPO_DATA = [
     "shariah": true,
     "os": 0,
     "ib": "Maybank IB",
-    "fundUse": "R&D / Ekspansi Global"
+    "fundUse": "R&D / Ekspansi Global",
+    "predictedGrade": "A",
+    "analystInsight": "🌟 <b>MUST BUY</b><br>Global drone leader. High institutional demand expected for this tech unicorn listing."
   },
   {
     "id": "ambest",
@@ -176,7 +178,9 @@ const IPO_DATA = [
     "shariah": true,
     "os": 0,
     "ib": "CIMB",
-    "fundUse": "Pengembangan"
+    "fundUse": "Pengembangan",
+    "predictedGrade": "A",
+    "analystInsight": "✅ <b>WORTH IT</b><br>Regional unicorn listing. High branding awareness and strong retail interest expected."
   },
   {
     "id": "stratus-global",
@@ -194,7 +198,7 @@ const IPO_DATA = [
     "ib": "UOB Kay Hian",
     "fundUse": "Expansion & R&D",
     "predictedGrade": "B",
-    "analystInsight": "HIGH CONVICTION: Semiconductor automation is a top-tier sector. Unlike Inspace, this is a global tech play on the Main Market. High institutional interest expected."
+    "analystInsight": "✅ <b>WORTH IT</b><br>HIGH CONVICTION: Semiconductor automation is a top-tier sector. Unlike Inspace, this is a global tech play on the Main Market."
   },
   {
     "id": "ei-power",
@@ -218,7 +222,7 @@ const IPO_DATA = [
     "pe": 14.5,
     "avgTP": 0.61,
     "predictedGrade": "B",
-    "analystInsight": "🚀 Exceptional Demand (85x)<br>⚡ M&A Securities (Momentum IB)<br>📈 Expansion Fund Use",
+    "analystInsight": "✅ <b>WORTH IT</b><br>🚀 Exceptional Demand (85x)<br>⚡ M&A Securities (Momentum IB)<br>📈 Expansion Fund Use",
     "research": [
       {
         "house": "TA Securities",
@@ -369,7 +373,7 @@ const IPO_DATA = [
     "ib": "TBA",
     "fundUse": "Working Capital & Development",
     "predictedGrade": "C",
-    "analystInsight": "AVOID: Property sector is currently cold with low retail interest. High risk of 'Inspace' performance. Not worth the capital lock-up."
+    "analystInsight": "⚠️ <b>AVOID</b><br>Property sector is currently cold with low retail interest. High risk of 'Inspace' performance."
   },
   {
     "id": "golden-destinations",
