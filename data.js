@@ -1,5 +1,25 @@
 const IPO_DATA = [
   {
+    "id": "bus-cap",
+    "companyName": "Bus Cap Berhad",
+    "sector": "Industrial (Fabrication)",
+    "stage": 3,
+    "price": 0.23,
+    "market": "ACE Market",
+    "status": "Application Open",
+    "closingDate": "2026-05-15T17:00:00",
+    "listingDate": "2026-06-03",
+    "prospectusUrl": "https://bursamalaysia.com/",
+    "year": 2026,
+    "shariah": true,
+    "os": 0,
+    "ib": "TA Securities",
+    "fundUse": "Construction of new production facility & procurement of machines",
+    "predictedGrade": "B",
+    "avgTP": 0.28,
+    "analystInsight": "NEW: TA Securities ACE play. Focus on production capacity expansion with decent upside potential."
+  },
+  {
     "id": "5e-resources",
     "companyName": "5E Resources Berhad",
     "sector": "Industrial Products",
