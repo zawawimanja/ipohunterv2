@@ -7,15 +7,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/zawawimanja/ipohunter.git"
+    "url": "git+https://github.com/zawawimanja/ipohunterv2.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/zawawimanja/ipohunter/issues"
+    "url": "https://github.com/zawawimanja/ipohunterv2/issues"
   },
-  "homepage": "https://github.com/zawawimanja/ipohunter#readme",
+  "homepage": "https://github.com/zawawimanja/ipohunterv2#readme",
   "description": "",
   "dependencies": {
     "@vercel/analytics": "^2.0.1",
