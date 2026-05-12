@@ -1,5 +1,20 @@
 [
     {
+        "id": "1doc",
+        "companyName": "1 Doc International Berhad",
+        "sector": "Consumer Products (Beauty Care)",
+        "stage": 2,
+        "market": "Main Market",
+        "status": "MITI Allocation Phase",
+        "prospectusUrl": "https://sahamonline.miti.gov.my/",
+        "year": 2026,
+        "os": 0,
+        "ib": "RHB Investment Bank",
+        "fundUse": "Expansion in Malaysia & Singapore, storage capacity, medical aesthetics",
+        "predictedGrade": "B",
+        "analystInsight": "✅ <b>WORTH IT (GRADE B)</b><br>Main Market listing backed by Top Tier IB (RHB). Expansion plans are solid. However, beauty sector is not a high-momentum theme."
+    },
+    {
         "id": "bus-cap",
         "companyName": "Bus Cap Berhad",
         "sector": "Industrial (Fabrication)",
